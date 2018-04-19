@@ -1,6 +1,6 @@
 package com.wangzy.exitappdemo.adapter
 
-import android.app.Activity
+import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
@@ -16,7 +16,7 @@ import com.wangzy.exitappdemo.ViewStubActivity
 class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -39,8 +39,11 @@ class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TVi
                 2 -> {
                     gotoActivity(ViewStubActivity::class.java)
                 }
-                3->{
+                3 -> {
                     gotoActivity(ImageActivity::class.java)
+                }
+                4 -> {
+                    gotoModelBActivity("com.wangzy.testmode.MainActivity")
                 }
 
             }
@@ -49,9 +52,26 @@ class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TVi
         holder.tv.text = datas[position]
     }
 
+    fun gotoModelBActivity(classPath: String) {
 
-    fun gotoActivity(claz:Class<*>){
-        val intent = Intent(context,ImageActivity::class.java)
+//        var claz=Class.forName(classPath)
+//        var intent=Intent(context,claz)
+//        context.startActivity(intent)
+
+        var intent = Intent()
+//        intent.addCategory(Intent.CATEGORY_LAUNCHER)
+        var cn = ComponentName("com.wangzy.testmode", (classPath))
+        intent.component=cn
+        context.startActivity(intent)
+
+
+
+
+
+    }
+
+    fun gotoActivity(claz: Class<*>) {
+        val intent = Intent(context, ImageActivity::class.java)
         context.startActivity(intent)
     }
 

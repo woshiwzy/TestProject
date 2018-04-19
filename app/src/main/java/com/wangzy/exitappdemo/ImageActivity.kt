@@ -33,6 +33,6 @@ class ImageActivity : Activity() {
 //        Log.i(TAG,"allow byte:"+bm.allocationByteCount)
         Log.i(TAG,"allow M:"+bm.byteCount/1024/1024)
         Log.i(TAG,"width:"+bm.width+" height:"+bm.height)
-        imageView2.setImageBitmap(bm)
+//        imageView2.setImageBitmap(bm)
     }
 }
