@@ -4,19 +4,23 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.wangzy.exitappdemo.EventStudyActivity
-import com.wangzy.exitappdemo.ImageActivity
+import com.wangzy.exitappdemo.activity.EventStudyActivity
+import com.wangzy.exitappdemo.activity.ImageActivity
 import com.wangzy.exitappdemo.R
-import com.wangzy.exitappdemo.ViewStubActivity
+import com.wangzy.exitappdemo.activity.ActivityLifeTest
+import com.wangzy.exitappdemo.activity.ViewStubActivity
+import com.wangzy.exitappdemo.consts.TAG
+import com.wangzy.exitappdemo.service.GrayService
 
 class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -45,6 +49,15 @@ class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TVi
                 4 -> {
                     gotoModelBActivity("com.wangzy.testmode.MainActivity")
                 }
+                5->{
+                    gotoActivity(ActivityLifeTest::class.java)
+                }
+                6->{
+
+                    Log.i(TAG,"clicked live service")
+                    var intent=Intent(context,GrayService::class.java)
+                    context.startService(intent)
+                }
 
             }
 
@@ -64,14 +77,10 @@ class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TVi
         intent.component=cn
         context.startActivity(intent)
 
-
-
-
-
     }
 
     fun gotoActivity(claz: Class<*>) {
-        val intent = Intent(context, ImageActivity::class.java)
+        val intent = Intent(context, claz)
         context.startActivity(intent)
     }
 

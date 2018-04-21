@@ -2,32 +2,88 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangzy.exitappdemo">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/timg"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/timg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".AActivity"
-            android:taskAffinity="mode.a"
-            android:launchMode="singleTop">
+            android:name=".activity.MainActivity"
+            android:launchMode="singleInstance"
+            android:taskAffinity="mode.a">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".BActivity" />
-        <activity android:name=".CActivity" />
-        <activity android:name=".DActivity" />
-        <activity android:name=".LeakActivity" />
-        <activity android:name=".EventStudyActivity" />
-        <activity android:name=".ViewStubActivity" />
-        <activity android:name=".ImageActivity"
-            ></activity>
+        <activity android:name=".activity.BActivity" />
+        <activity android:name=".activity.CActivity" />
+        <activity android:name=".activity.DActivity" />
+        <activity android:name=".activity.LeakActivity" />
+        <activity android:name=".activity.EventStudyActivity" />
+        <activity android:name=".activity.ViewStubActivity" />
+        <activity android:name=".activity.ImageActivity" />
+
+        <activity
+            android:name=".activity.ActivityLifeTest"
+            android:configChanges="orientation|screenSize" />
+
+        <activity
+            android:name=".activity.LiveActivity"
+            android:theme="@style/LiveStyle" />
+
+        <service
+            android:name=".service.MyJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <service
+            android:name=".service.GrayService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+        <service
+            android:name=".service.GrayService$GrayInnerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+
+
+
+
+        <receiver
+            android:name=".receiver.WakeReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.wake.gray" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.GrayService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+        <service
+            android:name=".service.GrayService$GrayInnerService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":gray" />
+        <service
+            android:name=".receiver.WakeReceiver$WakeNotifyService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".receiver.WakeReceiver$WakeGrayInnerService"
+            android:enabled="true"
+            android:exported="false" />
+
     </application>
 
 </manifest>

@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Demo Study</string>
+    <string name="app_name">学习总结</string>
+
+    <string name="title_activity_apix">APixActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

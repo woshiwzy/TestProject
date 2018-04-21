@@ -9,35 +9,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:padding="5dp"
         android:orientation="horizontal">
 
 
         <com.wangzy.exitappdemo.widget.CircleView
             android:id="@+id/circleView2"
-
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-
-
-            />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:minWidth="30dp" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:gravity="center"
             android:minWidth="60dp"
             android:text="Hello1"
-            android:layout_margin="10dp"
             android:textColor="@android:color/holo_red_dark"
             android:textSize="20sp" />
 
 
         <com.wangzy.exitappdemo.widget.CircleView
             android:id="@+id/circleView"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            />
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="30dp"
+            android:minWidth="30dp" />
 
 
     </LinearLayout>
