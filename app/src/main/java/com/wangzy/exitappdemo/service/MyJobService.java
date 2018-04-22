@@ -34,6 +34,7 @@ public class MyJobService extends JobService {
             jobFinished(param, true);
 
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.putExtra("msg","Job Service唤醒");
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             return true;
