@@ -16,11 +16,12 @@ import com.wangzy.exitappdemo.activity.ActivityLifeTest
 import com.wangzy.exitappdemo.activity.ViewStubActivity
 import com.wangzy.exitappdemo.consts.TAG
 import com.wangzy.exitappdemo.service.GrayService
+import com.wangzy.exitappdemo.service.ServiceWithToast
 
 class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "CC", "AA", "BB", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -53,10 +54,17 @@ class RAdapter(private val context: Context) : RecyclerView.Adapter<RAdapter.TVi
                     gotoActivity(ActivityLifeTest::class.java)
                 }
                 6->{
-
                     Log.i(TAG,"clicked live service")
                     var intent=Intent(context,GrayService::class.java)
                     context.startService(intent)
+                }
+                7->{
+                    Log.i(TAG,"clicked ServiceWithToast")
+                    var intent=Intent(context,ServiceWithToast::class.java)
+                    context.startService(intent)
+
+
+
                 }
 
             }

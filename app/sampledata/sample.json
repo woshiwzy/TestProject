@@ -1,0 +1,83 @@
+{
+  "AttributeTypeId": "TAG",
+  "Description": "Tags",
+  "Attributes": [
+    {
+      "AttributeId": "AboriginalCulture",
+      "Description": "Aboriginal Culture"
+    },
+    {
+      "AttributeId": "Adventure",
+      "Description": "Adventure"
+    },
+    {
+      "AttributeId": "Art&Culture",
+      "Description": "Art & Culture"
+    },
+    {
+      "AttributeId": "Beaches&Surf",
+      "Description": "Beaches & Surf"
+    },
+    {
+      "AttributeId": "Family",
+      "Description": "Family"
+    },
+    {
+      "AttributeId": "Food&Wine",
+      "Description": "Food & Wine"
+    },
+    {
+      "AttributeId": "History&Heritage",
+      "Description": "History & Heritage"
+    },
+    {
+      "AttributeId": "Luxury",
+      "Description": "Luxury"
+    },
+    {
+      "AttributeId": "MajorEvents",
+      "Description": "Major Events"
+    },
+    {
+      "AttributeId": "Nature&Wildlife",
+      "Description": "Nature & Wildlife"
+    },
+    {
+      "AttributeId": "Spa&Wellbeing",
+      "Description": "Spa & Wellbeing"
+    },
+    {
+      "AttributeId": "Sports",
+      "Description": "Sports"
+    },
+    {
+      "AttributeId": "BorderQLD/NSW",
+      "Description": "Border QLD/NSW"
+    },
+    {
+      "AttributeId": "BorderNSW/ACT",
+      "Description": "Border NSW/ACT"
+    },
+    {
+      "AttributeId": "BorderNSW/VIC",
+      "Description": "Border NSW/VIC"
+    },
+    {
+      "AttributeId": "BorderQLD/SA",
+      "Description": "Border QLD/SA"
+    },
+    {
+      "AttributeId": "SignatureExperiences",
+      "Description": "Signature Experiences"
+    },
+    {
+      "AttributeId": "LuxuryLodges",
+      "Description": "Luxury Lodges"
+    },
+    {
+      "AttributeId": "YouthOperators",
+      "Description": "Youth Operators"
+    }
+  ],
+  "statusCode": 200
+}

@@ -3,12 +3,15 @@
     package="com.wangzy.exitappdemo">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/timg"
+        android:icon="@drawable/star"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/timg"
+        android:persistent="true"
+        android:roundIcon="@drawable/star"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -28,19 +31,16 @@
         <activity android:name=".activity.EventStudyActivity" />
         <activity android:name=".activity.ViewStubActivity" />
         <activity android:name=".activity.ImageActivity" />
-
         <activity
             android:name=".activity.ActivityLifeTest"
             android:configChanges="orientation|screenSize" />
-
         <activity
             android:name=".activity.LiveActivity"
             android:theme="@style/LiveStyle" />
 
         <service
             android:name=".service.MyJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
-
+            android:permission="android.permission.BIND_JOB_SERVICE" />
         <service
             android:name=".service.GrayService"
             android:enabled="true"
@@ -52,15 +52,25 @@
             android:exported="false"
             android:process=":gray" />
 
-
-
-
         <receiver
             android:name=".receiver.WakeReceiver"
             android:enabled="true"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.wake.gray" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".receiver.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_CHANGED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.SCREEN_OFF" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.CLOSE_SYSTEM_DIALOGS" />
+                <action android:name="android.intent.action.PACKAGE_FIRST_LAUNCH" />
             </intent-filter>
         </receiver>
 
@@ -78,11 +88,26 @@
             android:name=".receiver.WakeReceiver$WakeNotifyService"
             android:enabled="true"
             android:exported="false" />
-
         <service
             android:name=".receiver.WakeReceiver$WakeGrayInnerService"
             android:enabled="true"
             android:exported="false" />
+        <service
+            android:name=".service.ServiceWithToast"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver
+            android:name=".receiver.HomeReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service
+            android:name=".service.AIDLService"
+            android:enabled="true"
+            android:process=":aidl_service"
+            android:exported="true"/>
+
 
     </application>
 

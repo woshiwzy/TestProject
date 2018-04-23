@@ -1,1 +1,1 @@
-include ':app', ':testmode'
+include ':app', ':testmode', ':aidlclient'
