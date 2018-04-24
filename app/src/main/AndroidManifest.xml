@@ -105,10 +105,12 @@
         <service
             android:name=".service.AIDLService"
             android:enabled="true"
-            android:process=":aidl_service"
+            android:exported="true"
+            android:process=":aidl_service" />
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
             android:exported="true"/>
-
-
     </application>
 
 </manifest>
