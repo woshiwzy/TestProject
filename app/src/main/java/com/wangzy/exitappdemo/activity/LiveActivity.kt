@@ -25,7 +25,7 @@ class LiveActivity : Activity() {
 
         fun actionToLiveActivity(pContext: Context) {
             val intent = Intent(pContext, LiveActivity::class.java)
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             pContext.startActivity(intent)
 
             Log.i(TAG,"启动单像素activity")

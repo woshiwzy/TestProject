@@ -13,10 +13,6 @@ class App : Application() {
 
 
     var list = mutableListOf<WeakReference<Activity>>()
-        get() = field
-        set(value) {
-            field = value
-        }
 
     override fun onCreate() {
         super.onCreate()

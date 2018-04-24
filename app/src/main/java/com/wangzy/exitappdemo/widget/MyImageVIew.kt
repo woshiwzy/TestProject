@@ -10,11 +10,6 @@ import com.wangzy.exitappdemo.consts.getActionName
 class MyImageVIew(context: Context, attrs: AttributeSet?) : android.support.v7.widget.AppCompatImageView(context, attrs) {
 
 
-    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-        super.onLayout(changed, left, top, right, bottom)
-    }
-
-
     override fun dispatchTouchEvent(event: MotionEvent?): Boolean {
 
         Log.i(TAG, "MyImageVIew dispatchTouchEvent:"+ getActionName(event!!.action))

@@ -45,8 +45,4 @@ class MessengerService : Service() {
         return messenger.binder
     }
 
-    override fun onCreate() {
-        super.onCreate()
-    }
-
 }

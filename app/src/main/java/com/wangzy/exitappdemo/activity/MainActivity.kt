@@ -47,7 +47,7 @@ class MainActivity : Activity() {
 
         var x:Int= 0x80000000.toInt()
         var y:Int= 0x80000000.toInt()
-        this.getWindow().setFlags(x, y)
+        this.window.setFlags(x, y)
 
         setContentView(R.layout.activity_main)
         homeReceiver= HomeReceiver()
@@ -155,7 +155,7 @@ class MainActivity : Activity() {
     override fun onPause() {
         super.onPause()
         Log.i(com.wangzy.exitappdemo.consts.TAG, "AonPause")
-        unregisterReceiver(homeReceiver);
+        unregisterReceiver(homeReceiver)
 //        screenManager.startActivity()
     }
 

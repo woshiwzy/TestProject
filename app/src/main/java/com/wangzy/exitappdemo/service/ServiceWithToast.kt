@@ -59,7 +59,7 @@ class ServiceWithToast : Service() {
 
 
     override fun onDestroy() {
-        handler?.removeCallbacksAndMessages(null)
+        handler.removeCallbacksAndMessages(null)
         Log.i(TAG, "ServiceWithToast.onDestroy")
         super.onDestroy()
     }

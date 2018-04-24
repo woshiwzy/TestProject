@@ -86,14 +86,14 @@ public class MyPullRefresh extends ViewGroup {
 
             case MotionEvent.ACTION_DOWN: {
                 childFirstVisible = getFirstListVisible("dispatchTouchEvent ACTION_DOWN");
-                isPullDown = (event.getY() - point.y) > 0 ? true : false;
+                isPullDown = (event.getY() - point.y) > 0;
                 point.x = event.getX();
                 point.y = event.getY();
             }
 
             case MotionEvent.ACTION_MOVE: {
 
-                isPullDown = (event.getY() - point.y) > 0 ? true : false;
+                isPullDown = (event.getY() - point.y) > 0;
 
                 int tempDelta = (int) (event.getY() - point.y);
                 if ((delta + tempDelta) > 0) {
@@ -119,7 +119,7 @@ public class MyPullRefresh extends ViewGroup {
             break;
 
             case MotionEvent.ACTION_UP:
-                isPullDown = (event.getY() - point.y) > 0 ? true : false;
+                isPullDown = (event.getY() - point.y) > 0;
 
                 point.x = event.getX();
                 point.y = event.getY();

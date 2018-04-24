@@ -29,16 +29,16 @@ class ViewStubActivity : Activity() {
             if (layoutView != null) {
 
                 // layoutView的root view id 是mViewStub inflatedId指定的ID
-                if (layoutView.getId() == R.id.act_layout_viewstub_new) {
-                    Log.e(TAG, "layout root id is act_layout_viewstub_new");
-                } else if (layoutView.getId() == R.id.layout_viewstub_old) {
-                    Log.e(TAG, "layout root id is layout_viewstub_old");
+                if (layoutView.id == R.id.act_layout_viewstub_new) {
+                    Log.e(TAG, "layout root id is act_layout_viewstub_new")
+                } else if (layoutView.id == R.id.layout_viewstub_old) {
+                    Log.e(TAG, "layout root id is layout_viewstub_old")
                 } else {
-                    Log.e(TAG, "layout root id is anyone : " + layoutView.getId());
+                    Log.e(TAG, "layout root id is anyone : " + layoutView.id)
                 }
 
                 // layoutView的root view布局 和mViewStub的布局保持一致
-                var width = layoutView.getLayoutParams().width
+                var width = layoutView.layoutParams.width
 
                 if (width == ViewGroup.LayoutParams.MATCH_PARENT) {
                     Log.e(TAG, "layout width is MATCH_PARENT")
