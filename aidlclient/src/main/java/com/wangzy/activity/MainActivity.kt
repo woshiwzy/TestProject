@@ -1,4 +1,4 @@
-package com.wangzy.aidlclient
+package com.wangzy.activity
 
 import android.content.ComponentName
 import android.content.Context
@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.os.IBinder
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
+import com.wangzy.aidlclient.R
 import com.wangzy.exitappdemo.IImmocAIDL
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
@@ -49,6 +50,12 @@ class MainActivity : AppCompatActivity() {
             var label = "result exit:" + ret + " " + iImmocAIDL!!.getBook("Think in Java 2")
             textView.text = label
             toast(label)
+        }
+
+        findViewById<Button>(R.id.buttonCallMessgener).setOnClickListener {
+
+            var inent=Intent(this@MainActivity, MessengerClientActivity::class.java)
+            startActivity(inent)
         }
 
     }

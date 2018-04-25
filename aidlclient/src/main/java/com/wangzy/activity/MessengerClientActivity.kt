@@ -1,4 +1,4 @@
-package com.wangzy
+package com.wangzy.activity
 
 import android.content.ComponentName
 import android.content.Context
@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
 import com.wangzy.aidlclient.R
+import org.jetbrains.anko.toast
 
 class MessengerClientActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class MessengerClientActivity : AppCompatActivity() {
                 Log.d(TAG, "服务端传来了消息=====>>>>>>>")
                 var str = msg.data.get("content")
                 Log.d(TAG, "content:" + str)
+                toast("服务器端传来消息:"+str)
             }
         }
     })
@@ -62,6 +64,13 @@ class MessengerClientActivity : AppCompatActivity() {
         serviceIntent.setClassName("com.wangzy.demo", "com.wangzy.exitappdemo.service.MessengerService")
         startService(serviceIntent)
         bindService(serviceIntent, serviceConnection, Context.BIND_AUTO_CREATE)
+    }
+
+    override fun onDestroy() {
+
+        unbindService(serviceConnection)
+
+        super.onDestroy()
     }
 
 }

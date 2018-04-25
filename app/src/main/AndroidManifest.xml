@@ -110,7 +110,9 @@
         <service
             android:name=".service.MessengerService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
+
+        <activity android:name=".mvp.MVPActivity"></activity>
     </application>
 
 </manifest>
