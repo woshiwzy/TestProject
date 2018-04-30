@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_color_dra"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_mid">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_mid">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_milesone" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewMilestoneTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:drawablePadding="@dimen/margin_content"
+                    android:gravity="center_vertical|left"
+                    android:text="Milestone 4"
+                    android:textColor="@color/text_blue_color"
+                    android:textSize="@dimen/text_size_content"
+                    android:singleLine="true" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/viewObject1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_object1" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewObject1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical|left"
+                    android:text="Milestone 4"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/text_size_content_small_1"
+                    android:textStyle="bold"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/viewObject2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_object2" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewObject2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical|left"
+                    android:text="Milestone 4"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/text_size_content_small_1"
+                    android:textStyle="bold"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/viewObject3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_mid"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/icon_object3" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewObject3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical|left"
+                    android:text="Milestone 4"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/text_size_content_small_1"
+                    android:textStyle="bold"
+                    android:singleLine="true" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayoutBottomTime"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/time_stamp_height"
+            android:layout_alignParentBottom="true"
+            android:gravity="center_vertical|right"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_question" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_micro"
+                android:src="@drawable/icon_time" />
+
+            <TextView
+                android:id="@+id/textViewTimeStamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_micro"
+                android:layout_marginRight="@dimen/margin_micro"
+                android:gravity="center_vertical|right"
+                android:textColor="@color/text_gray_black_color"
+                android:textSize="@dimen/text_size_content_small_1" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imageViewDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/linearlayoutBottomTime"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_micro"
+            android:src="@drawable/icon_done" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

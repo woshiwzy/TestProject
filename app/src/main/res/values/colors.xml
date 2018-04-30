@@ -5,4 +5,19 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="black_overlay">#66000000</color>
+
+
+
+    <color name="bg_color">#EFEFF4</color>
+    <color name="content_color">#EFEFF4</color>
+    <color name="text_blue_color">#2B9ADC</color>
+
+    <color name="text_black_color">#303030</color>
+    <color name="text_gray_black_color">#5D5D5D</color>
+
+    <color name="text_gray_color">#A1A1A1</color>
+    <color name="text_color_9b">#9B9B9B</color>
+    <color name="text_color_ab">#ABABAB</color>
+    <color name="text_color_5d">#5D5D5D</color>
+    <color name="text_color_black_ios">#555555</color>
 </resources>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white_color_dra"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_mid">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_mid">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/textViewCoachingSession"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@drawable/icon_cocah"
+                    android:drawablePadding="@dimen/margin_content"
+                    android:gravity="center_vertical|left"
+                    android:singleLine="true"
+                    android:text="Coaching Session 9"
+                    android:textColor="@color/text_blue_color"
+                    android:textSize="@dimen/text_size_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3"
+            android:gravity="center_vertical|left"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imageViewHand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:focusable="false"
+                    android:src="@drawable/icon_shark_hand" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textViewTrust"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="Trust"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/text_size_content" />
+
+                <TextView
+                    android:id="@+id/textViewPrepareText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoText="true"
+                    android:gravity="left|center_vertical"
+                    android:singleLine="true"
+                    android:text="5 Prepare questions"
+                    android:textColor="@color/text_black_color"
+                    android:textSize="@dimen/text_size_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top|left"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/margin_mid">
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutBottomOperate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+
+            <ImageView
+                android:id="@+id/imageViewCoachingDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="left"
+                android:padding="@dimen/margin_micro"
+                android:src="@drawable/selector_delete_coachesession" />
+
+
+            <LinearLayout
+                android:id="@+id/linearlayoutBottomTime"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/time_stamp_height"
+                android:layout_centerVertical="true"
+                android:gravity="center_vertical|right"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:duplicateParentState="true"
+                    android:focusable="false"
+                    android:src="@drawable/icon_question" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_micro"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:src="@drawable/icon_time" />
+
+                <TextView
+                    android:id="@+id/textViewTimeStamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_micro"
+                    android:layout_marginRight="@dimen/margin_micro"
+                    android:gravity="center_vertical|right"
+                    android:textColor="@color/text_gray_black_color"
+                    android:textSize="@dimen/text_size_content_small_1" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/imageViewDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/relativeLayoutBottomOperate"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="@dimen/margin_micro"
+            android:src="@drawable/icon_done"
+            android:visibility="invisible" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

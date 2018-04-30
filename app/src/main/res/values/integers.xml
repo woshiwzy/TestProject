@@ -1,0 +1,4 @@
+<resources>
+    <integer name="line_stroke">4</integer>
+    <integer name="dot_span">2</integer>
+</resources>

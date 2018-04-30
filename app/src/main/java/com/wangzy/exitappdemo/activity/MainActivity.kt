@@ -60,7 +60,7 @@ class MainActivity : Activity() {
 
 
         recycleView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        recycleView.adapter = RAdapter(this@MainActivity)
+        recycleView.adapter = RAdapter(this@MainActivity,pullRefresh)
 
 
         with(pullRefresh) {
@@ -130,16 +130,6 @@ class MainActivity : Activity() {
 //        })
 
     }
-
-   override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            Toast.makeText(this@MainActivity, "返回键无效", Toast.LENGTH_SHORT).show()
-            return true//return true;拦截事件传递,从而屏蔽back键。
-        }
-        return super.onKeyDown(keyCode, event)
-    }
-
-
 
 
     override fun onResume() {

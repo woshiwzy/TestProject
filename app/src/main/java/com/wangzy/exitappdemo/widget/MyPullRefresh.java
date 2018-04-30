@@ -32,6 +32,7 @@ public class MyPullRefresh extends ViewGroup {
     private PointF point = new PointF();
     private int delta = 0;
     private boolean isPullDown = false;
+    private boolean isAnimate=false;
 
 
     public MyPullRefresh(Context context, AttributeSet attrs) {
@@ -129,6 +130,7 @@ public class MyPullRefresh extends ViewGroup {
                     smmonthBack(delta);//自动弹回
                 } else {
                     delta = 0;
+                    isAnimate=false;
                 }
 
                 childFirstVisible = getFirstListVisible("dispatchTouchEvent ACTION_UP");
@@ -182,9 +184,16 @@ public class MyPullRefresh extends ViewGroup {
             }
         });
         va.addListener(new AnimatorListenerAdapter() {
+
+            @Override
+            public void onAnimationStart(Animator animation) {
+                isAnimate=true;
+            }
+
             @Override
             public void onAnimationEnd(Animator animation) {
                 delta = 0;
+                isAnimate=false;
             }
         });
 
@@ -267,4 +276,9 @@ public class MyPullRefresh extends ViewGroup {
     public void setOnPullProgressChangeListener(OnPullProgressChangeListener onPullProgressChangeListener) {
         this.onPullProgressChangeListener = onPullProgressChangeListener;
     }
+
+    public boolean isAnimate() {
+        return isAnimate;
+    }
+
 }

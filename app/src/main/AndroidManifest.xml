@@ -112,7 +112,9 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".mvp.MVPActivity"></activity>
+        <activity android:name=".mvp.MVPActivity" />
+        <activity android:name=".activity.AnimateActivity" />
+        <activity android:name=".activity.TimeLineActivity"></activity>
     </application>
 
 </manifest>
