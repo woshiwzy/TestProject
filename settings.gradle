@@ -1,1 +1,1 @@
-include ':app', ':testmode', ':aidlclient', ':javalib', ':httpmodel'
+include ':app', ':testmode', ':client', ':javalib', ':httpmodel'

@@ -1,5 +1,7 @@
 package com.wangzy.javalib.proxy;
 
+import java.util.HashMap;
+
 public class ProxyTest {
 
     public static void main(String[] args) {
@@ -11,6 +13,8 @@ public class ProxyTest {
         callBack.onStart();
         callBack.onEnd();
 
+
+        HashMap hmap=new HashMap(100);
 
 
     }

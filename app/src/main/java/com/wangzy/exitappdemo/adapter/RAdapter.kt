@@ -3,6 +3,7 @@ package com.wangzy.exitappdemo.adapter
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
+import android.os.Debug
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,12 +16,17 @@ import com.wangzy.exitappdemo.consts.TAG
 import com.wangzy.exitappdemo.mvp.MVPActivity
 import com.wangzy.exitappdemo.service.GrayService
 import com.wangzy.exitappdemo.service.ServiceWithToast
+import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
+import com.wangzy.work.WorkMainActivity
+import kotlinx.coroutines.experimental.CommonPool
+import kotlinx.coroutines.experimental.delay
+import kotlinx.coroutines.experimental.launch
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "CC", "AA", "BB", "CC", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "BB", "CC", "AA", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -36,10 +42,10 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
 
         holder.tv.setOnClickListener {
 
-            Log.i(TAG,"isanimate:"+myPullRefresh.isAnimate)
+            Log.i(TAG, "isanimate:" + myPullRefresh.isAnimate)
             if (myPullRefresh.isAnimate) {
 
-            }else{
+            } else {
                 when (position) {
                     1 -> {
                         gotoActivity(EventStudyActivity::class.java)
@@ -75,6 +81,12 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                     10 -> {
                         gotoActivity(TimeLineActivity::class.java)
                     }
+                    11 -> {
+                        gotoActivity(WorkMainActivity::class.java)
+                    }
+                    12 -> {
+                        startTracetest()
+                    }
 
                 }
             }
@@ -82,6 +94,31 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
         }
         holder.tv.text = datas[position]
     }
+
+
+    fun startTracetest() {
+
+        fun test1() {
+
+            var total:Long=0
+            for( i in 1 .. 100000){
+                total+=i
+            }
+        }
+
+        fun test2() {
+            var total:Int=0
+            for( i in 1 .. 1000){
+                total*=i
+            }
+        }
+
+
+            test1()
+            test2()
+        LogUtil.e(TAG,"done===============")
+    }
+
 
     fun gotoModelBActivity(classPath: String) {
 

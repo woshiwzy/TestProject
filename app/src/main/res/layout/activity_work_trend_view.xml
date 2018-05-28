@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wangzy.work.TrendViewActivity"
+    tools:ignore="MergeRootFrame" >
+
+    <com.wangzy.work.view.TrendView
+        android:layout_width="fill_parent"
+        android:layout_height="300dp" >
+    </com.wangzy.work.view.TrendView>
+
+</RelativeLayout>

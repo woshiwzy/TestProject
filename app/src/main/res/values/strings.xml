@@ -14,4 +14,12 @@
     <string name="title_activity_main">MVP Example</string>
     <string name="username_error">Username cannot be empty</string>
     <string name="password_error">Password cannot be empty</string>
+
+
+    <string name="simple_graphics">简单绘图</string>
+    <string name="title_activity_simple">SimpleActivity</string>
+    <string name="title_activity_trend_view">TrendViewActivity</string>
+    <string name="title_activity_trend_view_mark">TrendViewMark</string>
+    <string name="title_activity_pie_view">PieViewActivity</string>
+    <string name="title_activity_map">MapActivity</string>
 </resources>

@@ -8,7 +8,7 @@ import android.os.IBinder
 import android.os.Looper
 import android.util.Log
 import com.wangzy.exitappdemo.consts.TAG
-import com.wangzy.exitappdemo.util.DkToast
+//import com.wangzy.exitappdemo.util.DkToast
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.launch
 import java.util.concurrent.CountDownLatch

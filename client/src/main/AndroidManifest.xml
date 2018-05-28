@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wangzy.aidlclient">
 
+
+    <!--android:authorities="com.wangzy.provider.permission"-->
+    <!--android:readPermission="com.wangzy.provider.permission.ReadPermisson"-->
+    <!--android:writePermission="com.wangzy.provider.permission.WritePermisson"-->
+    <uses-permission android:name="com.wangzy.provider.permission.ReadPermisson"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
