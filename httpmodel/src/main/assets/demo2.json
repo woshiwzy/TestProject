@@ -1,0 +1,12 @@
+{
+  "message": "OK",
+  "code": 200,
+  "data": {
+    "name": "AMERICA HIGH SPEED",
+    "serverurl": "65.49.201.127",
+    "id": 1,
+    "method": "aes-256-cfb",
+    "password": "666666",
+    "port": 9000
+  }
+}
