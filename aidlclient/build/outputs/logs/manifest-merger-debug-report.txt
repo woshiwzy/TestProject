@@ -1,0 +1,111 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/fda32a3bdf976cc4f3762148981a0d1a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/2c735c1801626b15a939410c06119461/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/593aaa1cc7a48deb2e35e27468b67678/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/7fdbb6b52b17e619382912ca05d42f9c/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/4ec02c483c01c4f0cd749028d351a81d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5ad6f5c83e10943dd198782aa495979b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0fcb3f15e1e2d0729e5871d6ae959ec8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ceedef0897507d2de2a143bcd3ee9421/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/fefc2d8e11fbf3398801b97f3d964e86/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6b35398bd405ec9e96b1047216578a58/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9698c9cf7f1cc0aa24082f6c58122be3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/007992df771164391479b20c4fa39255/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+	package
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:3:5-36
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:1-23:12
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:5:5-21:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/2c735c1801626b15a939410c06119461/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/2c735c1801626b15a939410c06119461/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:11:9-40
+activity#com.wangzy.activity.MainActivity
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:12:9-18:20
+	android:name
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:12:19-66
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:16:27-74
+activity#com.wangzy.activity.MessengerClientActivity
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:19:9-80
+	android:name
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:19:19-77
+activity#com.wangzy.login.LoginActivity
+ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:20:9-76
+	android:name
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml:20:19-64
+uses-sdk
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/fda32a3bdf976cc4f3762148981a0d1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/fda32a3bdf976cc4f3762148981a0d1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/2c735c1801626b15a939410c06119461/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.0.aar/2c735c1801626b15a939410c06119461/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/593aaa1cc7a48deb2e35e27468b67678/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/593aaa1cc7a48deb2e35e27468b67678/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/7fdbb6b52b17e619382912ca05d42f9c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/7fdbb6b52b17e619382912ca05d42f9c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/4ec02c483c01c4f0cd749028d351a81d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/4ec02c483c01c4f0cd749028d351a81d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5ad6f5c83e10943dd198782aa495979b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/5ad6f5c83e10943dd198782aa495979b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0fcb3f15e1e2d0729e5871d6ae959ec8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/0fcb3f15e1e2d0729e5871d6ae959ec8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ceedef0897507d2de2a143bcd3ee9421/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/ceedef0897507d2de2a143bcd3ee9421/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/fefc2d8e11fbf3398801b97f3d964e86/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/fefc2d8e11fbf3398801b97f3d964e86/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6b35398bd405ec9e96b1047216578a58/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/6b35398bd405ec9e96b1047216578a58/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9698c9cf7f1cc0aa24082f6c58122be3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/9698c9cf7f1cc0aa24082f6c58122be3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/007992df771164391479b20c4fa39255/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/wangzy/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/007992df771164391479b20c4fa39255/AndroidManifest.xml:20:5-44
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		ADDED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml
+		INJECTED from /Users/wangzy/github/TestProject/aidlclient/src/main/AndroidManifest.xml

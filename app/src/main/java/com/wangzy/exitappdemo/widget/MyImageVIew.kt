@@ -33,7 +33,7 @@ class MyImageVIew(context: Context, attrs: AttributeSet?) : android.support.v7.w
 
             MotionEvent.ACTION_MOVE -> {
                 Log.i(TAG, "MyImageVIew.onTouchEvent.ACTION_MOVE")
-//                return true
+                return true
             }
 
             MotionEvent.ACTION_UP -> Log.i(TAG, "MyImageVIew.onTouchEvent.ACTION_UP")

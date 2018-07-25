@@ -12,7 +12,7 @@ import android.os.IBinder
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.KeyEvent
+import com.TestMix
 import com.wangzy.exitappdemo.R
 import com.wangzy.exitappdemo.adapter.RAdapter
 import com.wangzy.exitappdemo.consts.TAG
@@ -24,11 +24,6 @@ import kotlinx.coroutines.experimental.CommonPool
 import kotlinx.coroutines.experimental.android.UI
 import kotlinx.coroutines.experimental.delay
 import kotlinx.coroutines.experimental.launch
-import android.widget.Toast
-import android.view.KeyEvent.KEYCODE_HOME
-import android.view.KeyEvent.KEYCODE_BACK
-
-
 
 
 class MainActivity : Activity() {
@@ -42,15 +37,17 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+//        TestMix.testMix()
+
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        var x:Int= 0x80000000.toInt()
-        var y:Int= 0x80000000.toInt()
+        var x: Int = 0x80000000.toInt()
+        var y: Int = 0x80000000.toInt()
         this.window.setFlags(x, y)
 
         setContentView(R.layout.activity_main)
-        homeReceiver= HomeReceiver()
+        homeReceiver = HomeReceiver()
 
 
         var msg = intent?.getStringExtra("msg")
@@ -60,7 +57,7 @@ class MainActivity : Activity() {
 
 
         recycleView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
-        recycleView.adapter = RAdapter(this@MainActivity,pullRefresh)
+        recycleView.adapter = RAdapter(this@MainActivity, pullRefresh)
 
 
         with(pullRefresh) {
@@ -136,9 +133,9 @@ class MainActivity : Activity() {
         super.onResume()
 //        screenManager.finishActivity()
 
-        val fileter=IntentFilter()
+        val fileter = IntentFilter()
         fileter.addAction(Intent.ACTION_CLOSE_SYSTEM_DIALOGS)
-        registerReceiver(homeReceiver,fileter)
+        registerReceiver(homeReceiver, fileter)
     }
 
 
@@ -148,7 +145,6 @@ class MainActivity : Activity() {
         unregisterReceiver(homeReceiver)
 //        screenManager.startActivity()
     }
-
 
 
     override fun onStop() {

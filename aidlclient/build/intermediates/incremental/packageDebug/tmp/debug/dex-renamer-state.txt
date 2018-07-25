@@ -1,0 +1,4 @@
+#Mon May 28 12:55:13 CST 2018
+base.0=/Users/wangzy/github/TestProject/aidlclient/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

@@ -3,7 +3,6 @@ package com.wangzy.exitappdemo.adapter
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.os.Debug
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,14 +18,11 @@ import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
 import com.wangzy.work.WorkMainActivity
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "BB", "CC", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "AA", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -87,6 +83,14 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                     12 -> {
                         startTracetest()
                     }
+                    13 -> {
+                        gotoActivity(RxActivity::class.java)
+                    }
+                    14 -> {
+                        //to accessbility
+                        gotoActivity(AccessbilifyActivityDemo::class.java)
+
+                    }
 
                 }
             }
@@ -100,23 +104,23 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
 
         fun test1() {
 
-            var total:Long=0
-            for( i in 1 .. 100000){
-                total+=i
+            var total: Long = 0
+            for (i in 1..100000) {
+                total += i
             }
         }
 
         fun test2() {
-            var total:Int=0
-            for( i in 1 .. 1000){
-                total*=i
+            var total: Int = 0
+            for (i in 1..1000) {
+                total *= i
             }
         }
 
 
-            test1()
-            test2()
-        LogUtil.e(TAG,"done===============")
+        test1()
+        test2()
+        LogUtil.e(TAG, "done===============")
     }
 
 
