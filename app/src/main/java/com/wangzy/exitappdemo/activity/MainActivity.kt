@@ -60,18 +60,18 @@ class MainActivity : Activity() {
         recycleView.adapter = RAdapter(this@MainActivity, pullRefresh)
 
 
-        with(pullRefresh) {
-            post { autoRefresh() }
-        }
-
-
-        launch(CommonPool) {
-            delay(3000)
-
-            launch(UI) {
-                pullRefresh.stopRefresh()
-            }
-        }
+//        with(pullRefresh) {
+//            post { autoRefresh() }
+//        }
+//
+//
+//        launch(CommonPool) {
+//            delay(3000)
+//
+//            launch(UI) {
+//                pullRefresh.stopRefresh()
+//            }
+//        }
 
 
 

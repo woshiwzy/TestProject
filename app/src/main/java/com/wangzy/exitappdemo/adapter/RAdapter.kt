@@ -17,12 +17,14 @@ import com.wangzy.exitappdemo.service.GrayService
 import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
+import com.wangzy.flight.FlightSeatListActivity
+import com.wangzy.work.FlightSeatActivity
 import com.wangzy.work.WorkMainActivity
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "AA", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "飞机图", "BB", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -90,6 +92,10 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                         //to accessbility
                         gotoActivity(AccessbilifyActivityDemo::class.java)
 
+                    }
+                    15 -> {
+//                        gotoActivity(FlightSeatActivity::class.java)
+                        gotoActivity(FlightSeatListActivity::class.java)
                     }
 
                 }
