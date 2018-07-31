@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "listHeaderTitle": "ABC__DFG__HJK",
+  "rangeTitle": "ABCDFGHJK",
+  "rows": [
+    {
+      "rowId": 1,
+      "seatArrange": "1,0,0,A,A,1,0,1,A,A,0,0,1",
+      "rangeTitle": "A,_,_,_,_,D,_,G,_,_,_,_,K",
+      "seatArrangeNumber": "1-7"
+    },
+    {
+      "rowId": 2,
+      "seatArrange": "1,1,1,A,A,1,1,1,A,A,1,1,1",
+      "rangeTitle": "A,B,C,_,_,D,F,G,_,_,H,J,K",
+      "seatArrangeNumber": "20-38,51-64"
+    },
+    {
+      "rowId": 3,
+      "seatArrange": "0,0,0,A,A,1,1,1,A,A,0,0,0",
+      "rangeTitle": "_,_,_,_,_,D,F,G,_,_,_,_,_",
+      "seatArrangeNumber": "50-50,65-65"
+    }
+  ]
+}

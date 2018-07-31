@@ -20,6 +20,12 @@
       "seatArrange": "1,1,A,A,1,0,1,1,A,A,1,1",
       "rangeTitle": "A,C,_,_,D,_,F,G,_,_,H,K",
       "seatArrangeNumber": "24-33"
+    },
+    {
+      "rowId": 4,
+      "seatArrange": "1,1,A,A,1,0,1,1,A,A,0,0",
+      "rangeTitle":  "A,C,_,_,D,_,F,G,_,_,_,_",
+      "seatArrangeNumber": "34-37"
     }
   ]
 }
