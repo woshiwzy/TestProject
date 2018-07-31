@@ -192,7 +192,7 @@ public class FlightSeatActivity extends Activity {
                     case "1": {// "seatArrange": "1,1,1,A,A,1,1,1",//1代表一个位置，A代表过道,0代表没有安装座椅
 
                         ViewGroup viewGroup = (ViewGroup) layoutInflater.inflate(R.layout.item_seat_1, null);
-                        ((TextView) viewGroup.findViewById(R.id.textViewSeatTitle)).setText(titles[i].replace("_", ""));
+                        ((TextView) viewGroup.findViewById(R.id.textViewSeatFamilyName)).setText(titles[i].replace("_", ""));
 
                         this.lineraLayoutPosition.addView(viewGroup, lpp);
                         final int finalI = i;

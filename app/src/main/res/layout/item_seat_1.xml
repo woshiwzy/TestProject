@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.wangzy.flight.AutoScaleTextView
-        android:id="@+id/textViewSeatTitle"
+        android:id="@+id/textViewSeatFamilyName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
