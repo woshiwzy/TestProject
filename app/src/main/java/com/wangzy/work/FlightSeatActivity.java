@@ -43,9 +43,7 @@ public class FlightSeatActivity extends Activity {
         recyclerView = findViewById(R.id.recyclerView);
         lineraLayoutPosition = findViewById(R.id.lineraLayoutPosition);
 
-
         buildAdapter();
-
 
     }
 
@@ -55,6 +53,12 @@ public class FlightSeatActivity extends Activity {
         FlightSeat flightSeat = FlightHelper.loadFlightSeat(this, "data/" + flightTemplate.getConfigFile() + ".json");
 
         setTitle(flightTemplate.getConfigFile());
+
+        String validate = flightSeat.selfValidate();
+        if (null != validate) {
+            Tool.ToastShow(this, flightTemplate.getConfigFile() + ":" + validate);
+            return;
+        }
 
 
         //添加座位图顶部Title

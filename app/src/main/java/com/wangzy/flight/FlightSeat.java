@@ -3,6 +3,9 @@ package com.wangzy.flight;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * 飞机座位布局
@@ -18,13 +21,121 @@ public class FlightSeat {
     private ArrayList<Row> rows;//座位布局种类和分布
 
     /**
-     * 座位图自动检查
+     * 座位图自检查
+     *
      * @return
      */
-    public String  selfValidate(){
+    public String selfValidate() {
+
+        String headerTitle = this.listHeaderTitle.replace("_", "");
+        String rangeTitle = this.rangeTitle;
+
+        //检查Title
+        if (!headerTitle.equals(rangeTitle)) {
+            return "listHeaderTitle 和 rangeTitle 不相同。";
+        }
+
+        List<String> titlelist = new ArrayList<>();
+        char[] ary = headerTitle.toCharArray();
+        for (char ar : ary) {
+            titlelist.add(String.valueOf(ar));
+        }
+        Set<String> titles = new HashSet<>(titlelist);
+
+        //检查布局种类
+        Set<Integer> rowIds = new HashSet<>();
+        for (Row row : rows) {
+            rowIds.add(row.getRowId());
+        }
+        if (rowIds.size() != rows.size()) {
+            return "rowId 可能有重复，请注意！";
+        }
+        //检测布局内容是否正确
+        for (Row row : rows) {
+
+            int rowId = row.getRowId();
+
+            String[] seatsType = row.getSeatArrange().split(",");
+            String[] title = row.getRangeTitle().split(",");
+
+            if (seatsType.length != title.length) {
+                return "rowId:" + rowId + "seatArrange 和 rangeTitle 长度不一样";
+            }
+
+            for (int i = 0; i < seatsType.length; i++) {
+
+                String seat = seatsType[i];
+                if (!seat.equals("1") && !seat.equals("0") && !seat.equals("A")) {
+                    return "seatArrange 只能为1，0，A";
+                }
+                String titleLabel = title[i];
+                if (!titles.contains(titleLabel) && !"_".equals(titleLabel)) {
+                    return rowId + " rangeTitle出现了错误，请核对rangeTitle";
+                }
+            }
+
+            String[] seatArrangeNumbers = row.getSeatArrangeNumber().split(",");
+
+            for (String seatNumberRange : seatArrangeNumbers) {
+
+                String[] seatNumbers = seatNumberRange.split("-");
+
+                if (seatNumbers.length != 2) {
+                    return rowId + " seatArrangeNumber 格式应该是：开始数字-结束数字";
+                }
+                try {
+
+                    int start = Integer.parseInt(seatNumbers[0]);
+                    int end = Integer.parseInt(seatNumbers[1]);
+
+                    if (start > end) {
+                        return rowId + " seatArrangeNumber start 应该小于等于 end";
+                    }
+                } catch (Exception e) {
+                    return rowId + " seatArrangeNumber 格式应该是：开始数字-结束数字";
+                }
+            }
+        }
 
 
-        return "";
+        //检测 seatArrangeNumber(开始和结束都是唯一的)，是否有重复
+
+        ArrayList<Row.RowRange> realrows = generateRealRow();
+
+        Set<Integer> rearowStart = new HashSet<>();
+        Set<Integer> rearowEnd = new HashSet<>();
+
+        int totalRange = 0;
+        for (Row row : rows) {
+
+            String[] seatRange = row.getSeatArrangeNumber().split(",");
+
+
+            for (String range : seatRange) {
+
+                totalRange++;
+
+                String[] r = range.split("-");
+
+                int start = Integer.parseInt(r[0]);
+                rearowStart.add(start);
+
+                int end = Integer.parseInt(r[1]);
+                rearowEnd.add(end);
+
+            }
+        }
+
+        if (rearowStart.size() != totalRange) {
+            return " seatArrangeNumber start 排列有重复";
+        }
+
+        if (rearowEnd.size() != totalRange) {
+            return " seatArrangeNumber end 排列有重复";
+        }
+
+
+        return null;
     }
 
     public String getListHeaderTitle() {

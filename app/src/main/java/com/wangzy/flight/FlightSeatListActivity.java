@@ -82,6 +82,7 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
         int totalFlihtNumber = 0;
         int successNumber = 0;
+
         for (FlightTemplate flightTemplate : flightTemplates) {
 
             ArrayList<String> childs = flightTemplate.getChild();
@@ -225,11 +226,13 @@ public class FlightSeatListActivity extends AppCompatActivity {
                 }
                 LogUtil.i(ConstantKt.getTAG(), "tempate:" + template + " child:" + childAray.length() + " validate:" + validate);
             }
-
             Tool.ToastShow(this, "Success：共" + jsonArray.length() + "个（模版/座位布局图）配置" + "匹配:" + flightNumbers.size() + "个飞机号");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
     }
 
 
