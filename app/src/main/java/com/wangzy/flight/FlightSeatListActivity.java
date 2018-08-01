@@ -127,9 +127,9 @@ public class FlightSeatListActivity extends AppCompatActivity {
                 LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight);
 
                 Intent i = new Intent();
-                AutoScaleTextView.FlightSeatActivity.flightTemplate = (FlightTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
-                if (AutoScaleTextView.FlightSeatActivity.flightTemplate.existConfig()) {
-                    Tool.startActivity(FlightSeatListActivity.this, AutoScaleTextView.FlightSeatActivity.class, i);
+                FlightSeatActivity.flightTemplate = (FlightTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
+                if (FlightSeatActivity.flightTemplate.existConfig()) {
+                    Tool.startActivity(FlightSeatListActivity.this, FlightSeatActivity.class, i);
                 } else {
                     Tool.ToastShow(FlightSeatListActivity.this, "没有座位图配置文件");
                 }

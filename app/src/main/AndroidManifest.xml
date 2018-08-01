@@ -208,7 +208,7 @@
                 android:resource="@xml/accessibility" />
         </service>
 
-        <activity android:name="com.wangzy.flight.AutoScaleTextView$FlightSeatActivity" />
+        <activity android:name="com.wangzy.flight.FlightSeatActivity" />
         <activity android:name="com.wangzy.flight.FlightSeatListActivity"/>
     </application>
 
