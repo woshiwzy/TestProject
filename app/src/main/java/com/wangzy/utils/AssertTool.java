@@ -12,7 +12,6 @@ import java.util.HashSet;
 
 public class AssertTool {
 
-    private static String tag = "AssertTool";
     public static String DATA_PATH = "data/";
 
     public static String getAssertStringContent(Context context, String srcPath) {
@@ -35,7 +34,6 @@ public class AssertTool {
 
     /**
      * 列出base_data下得文件资源
-     *
      * @param context
      * @return
      */

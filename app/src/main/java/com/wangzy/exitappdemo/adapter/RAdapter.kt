@@ -18,7 +18,6 @@ import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
 import com.wangzy.flight.FlightSeatListActivity
-import com.wangzy.work.FlightSeatActivity
 import com.wangzy.work.WorkMainActivity
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {

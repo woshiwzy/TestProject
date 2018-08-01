@@ -18,7 +18,6 @@ import com.wangzy.exitappdemo.consts.ConstantKt;
 import com.wangzy.exitappdemo.util.LogUtil;
 import com.wangzy.exitappdemo.util.Tool;
 import com.wangzy.utils.AssertTool;
-import com.wangzy.work.FlightSeatActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -128,9 +127,9 @@ public class FlightSeatListActivity extends AppCompatActivity {
                 LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight);
 
                 Intent i = new Intent();
-                FlightSeatActivity.flightTemplate = (FlightTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
-                if (FlightSeatActivity.flightTemplate.existConfig()) {
-                    Tool.startActivity(FlightSeatListActivity.this, FlightSeatActivity.class, i);
+                AutoScaleTextView.FlightSeatActivity.flightTemplate = (FlightTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
+                if (AutoScaleTextView.FlightSeatActivity.flightTemplate.existConfig()) {
+                    Tool.startActivity(FlightSeatListActivity.this, AutoScaleTextView.FlightSeatActivity.class, i);
                 } else {
                     Tool.ToastShow(FlightSeatListActivity.this, "没有座位图配置文件");
                 }
