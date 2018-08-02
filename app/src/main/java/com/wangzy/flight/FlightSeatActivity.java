@@ -28,7 +28,7 @@ public class FlightSeatActivity extends Activity {
 
 
     private RecyclerView recyclerView;
-    public static FlightTemplate flightTemplate;
+    public static FlightGraphicsTemplate flightTemplate;
     private LinearLayout lineraLayoutPosition;
 
 
@@ -45,11 +45,10 @@ public class FlightSeatActivity extends Activity {
 
     private void buildAdapter() {
 
-        //加载座位图文件
-        FlightSeat flightSeat = FlightSeat.loadFlightSeat(this, "data/" + flightTemplate.getConfigFile() + ".json");
+
+        FlightGraphicsSeat flightSeat = FlightGraphicsTemplateTool.findFlightSetByFlightNumber(this,flightTemplate.getConfigFile());
 
         setTitle(flightTemplate.getConfigFile());
-
         String validate = flightSeat.selfValidate();
         if (null != validate) {
             Tool.ToastShow(this, flightTemplate.getConfigFile() + ":" + validate);
@@ -94,14 +93,14 @@ public class FlightSeatActivity extends Activity {
 
         private Context context;
 
-        private FlightSeat flightSeat;
+        private FlightGraphicsSeat flightSeat;
 
-        private ArrayList<Row.RowRange> allrows;
+        private ArrayList<FlightGraphicsRow.RowRange> allrows;
 
         private int recyclerViewWidth;
         private LayoutInflater layoutInflater;
 
-        public FlightSeatAdapter(Context context, FlightSeat flightSeat, int recyclerViewWidth) {
+        public FlightSeatAdapter(Context context, FlightGraphicsSeat flightSeat, int recyclerViewWidth) {
 
             this.context = context;
             this.flightSeat = flightSeat;
@@ -116,7 +115,7 @@ public class FlightSeatActivity extends Activity {
 
             LinearLayout rootItem = (LinearLayout) layoutInflater.inflate(R.layout.item_row, parent, false);
 
-            Row row = flightSeat.getRowById(viewType_fromRowId);
+            FlightGraphicsRow row = flightSeat.getRowById(viewType_fromRowId);
 
             ViewGroup.LayoutParams lpp = rootItem.getLayoutParams();
 
@@ -134,14 +133,14 @@ public class FlightSeatActivity extends Activity {
         @Override
         public void onBindViewHolder(@NonNull FlightHolder holder, int position) {
 
-            Row.RowRange rowrange = allrows.get(position);
+            FlightGraphicsRow.RowRange rowrange = allrows.get(position);
             holder.range = rowrange;
             holder.textViewRowNumber.setText(String.valueOf(rowrange.getRowNumber()));
         }
 
         @Override
         public int getItemViewType(int position) {
-            Row row = allrows.get(position).getRow();
+            FlightGraphicsRow row = allrows.get(position).getRow();
             return row.getRowId();
         }
 
@@ -159,7 +158,7 @@ public class FlightSeatActivity extends Activity {
         LinearLayout lineraLayoutPosition;
         LayoutInflater layoutInflater;
         int cellWidth = 0;
-        Row.RowRange range;
+        FlightGraphicsRow.RowRange range;
         String[] titles;
 
 
@@ -171,7 +170,7 @@ public class FlightSeatActivity extends Activity {
             this.cellWidth = cellWidth;
         }
 
-        public void buildRowView(final Row row) {
+        public void buildRowView(final FlightGraphicsRow row) {
             //            "seatArrange": "1,1,1,A,A,1,1,1",//1代表一个位置，A代表过道,0代表没有安装座椅
             final String[] poses = row.getSeatArrange().split(",");
             LinearLayout.LayoutParams lpp = new LinearLayout.LayoutParams(cellWidth, ViewGroup.LayoutParams.MATCH_PARENT);

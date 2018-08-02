@@ -2,13 +2,17 @@ package com.wangzy.flight;
 
 import java.util.ArrayList;
 
-public class FlightTemplate {
+
+/**
+ * 飞机座位布局图映射描述
+ */
+public class FlightGraphicsTemplate {
 
     private String template;
     private ArrayList<String> child;
     private String configFile;
 
-    public FlightTemplate() {
+    public FlightGraphicsTemplate() {
         child = new ArrayList<>();
     }
 
@@ -46,7 +50,7 @@ public class FlightTemplate {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        FlightTemplate that = (FlightTemplate) o;
+        FlightGraphicsTemplate that = (FlightGraphicsTemplate) o;
 
         return template.equals(that.template);
     }

@@ -18,7 +18,7 @@ import java.util.Set;
 /**
  * 飞机座位布局
  */
-public class FlightSeat {
+public class FlightGraphicsSeat {
 
     private String version;//版本
     private String listHeaderTitle;
@@ -26,7 +26,7 @@ public class FlightSeat {
 
     private String planeNumber;//飞机号
 
-    private ArrayList<Row> rows;//座位布局种类和分布
+    private ArrayList<FlightGraphicsRow> rows;//座位布局种类和分布
 
     /**
      * 座位图自检查
@@ -52,14 +52,14 @@ public class FlightSeat {
 
         //检查布局种类
         Set<Integer> rowIds = new HashSet<>();
-        for (Row row : rows) {
+        for (FlightGraphicsRow row : rows) {
             rowIds.add(row.getRowId());
         }
         if (rowIds.size() != rows.size()) {
             return "rowId 可能有重复，请注意！";
         }
         //检测布局内容是否正确
-        for (Row row : rows) {
+        for (FlightGraphicsRow row : rows) {
 
             int rowId = row.getRowId();
 
@@ -108,13 +108,13 @@ public class FlightSeat {
 
         //检测 seatArrangeNumber(开始和结束都是唯一的)，是否有重复
 
-        ArrayList<Row.RowRange> realrows = generateRealRow();
+        ArrayList<FlightGraphicsRow.RowRange> realrows = generateRealRow();
 
         Set<Integer> rearowStart = new HashSet<>();
         Set<Integer> rearowEnd = new HashSet<>();
 
         int totalRange = 0;
-        for (Row row : rows) {
+        for (FlightGraphicsRow row : rows) {
 
             String[] seatRange = row.getSeatArrangeNumber().split(",");
 
@@ -154,8 +154,8 @@ public class FlightSeat {
         this.listHeaderTitle = listHeaderTitle;
     }
 
-    public Row getRowById(int rowId) {
-        for (Row row : rows) {
+    public FlightGraphicsRow getRowById(int rowId) {
+        for (FlightGraphicsRow row : rows) {
             if (row.getRowId() == rowId) {
                 return row;
             }
@@ -169,15 +169,15 @@ public class FlightSeat {
      *
      * @return
      */
-    public ArrayList<Row.RowRange> getAllRow() {
+    public ArrayList<FlightGraphicsRow.RowRange> getAllRow() {
 
-        ArrayList<Row.RowRange> arranges = new ArrayList<>();
-        for (Row row : rows) {
+        ArrayList<FlightGraphicsRow.RowRange> arranges = new ArrayList<>();
+        for (FlightGraphicsRow row : rows) {
             arranges.addAll(row.getRowRanges());
         }
-        Collections.sort(arranges, new Comparator<Row.RowRange>() {
+        Collections.sort(arranges, new Comparator<FlightGraphicsRow.RowRange>() {
             @Override
-            public int compare(Row.RowRange o1, Row.RowRange o2) {
+            public int compare(FlightGraphicsRow.RowRange o1, FlightGraphicsRow.RowRange o2) {
                 return o1.getStart() > o2.getStart() ? 1 : -1;
             }
         });
@@ -190,18 +190,18 @@ public class FlightSeat {
      *
      * @return
      */
-    public ArrayList<Row.RowRange> generateRealRow() {
+    public ArrayList<FlightGraphicsRow.RowRange> generateRealRow() {
 
-        ArrayList<Row.RowRange> arranges = new ArrayList<>();
+        ArrayList<FlightGraphicsRow.RowRange> arranges = new ArrayList<>();
 
-        ArrayList<Row.RowRange> sortRowTypes = getAllRow();
+        ArrayList<FlightGraphicsRow.RowRange> sortRowTypes = getAllRow();
 
-        for (Row.RowRange rowRange : sortRowTypes) {
+        for (FlightGraphicsRow.RowRange rowRange : sortRowTypes) {
 
             for (int i = rowRange.getStart(), isize = rowRange.getEnd(); i <= isize; i++) {
 
 
-                Row.RowRange newRange = rowRange.clone();
+                FlightGraphicsRow.RowRange newRange = rowRange.clone();
 
                 newRange.setRowNumber(String.valueOf(i));
 
@@ -214,11 +214,11 @@ public class FlightSeat {
     }
 
 
-    public FlightSeat() {
+    public FlightGraphicsSeat() {
         rows = new ArrayList<>();
     }
 
-    public void addRow(Row row) {
+    public void addRow(FlightGraphicsRow row) {
         this.rows.add(row);
     }
 
@@ -231,18 +231,18 @@ public class FlightSeat {
     }
 
 
-    public ArrayList<Row> getRows() {
+    public ArrayList<FlightGraphicsRow> getRows() {
         return rows;
     }
 
-    public void setRows(ArrayList<Row> rows) {
+    public void setRows(ArrayList<FlightGraphicsRow> rows) {
         this.rows = rows;
     }
 
 
-    public Row getRowByRowNumber(int row) {
+    public FlightGraphicsRow getRowByRowNumber(int row) {
 
-        for (Row temRow : rows) {
+        for (FlightGraphicsRow temRow : rows) {
             String[] numers = temRow.getSeatArrangeNumber().split(",");
             if (isInNumber(row, numers)) {
                 return temRow;
@@ -283,14 +283,15 @@ public class FlightSeat {
 
 
 
-    public static FlightSeat loadFlightSeat(Context context, String absFilePath) {
+    @Deprecated
+    public static FlightGraphicsSeat loadFlightSeat(Context context, String absFilePath) {
 
         String json = AssertTool.getAssertStringContent(context, absFilePath);
 
         try {
             JSONObject jsonObject = new JSONObject(json);
 
-            FlightSeat flightSeat = new FlightSeat();
+            FlightGraphicsSeat flightSeat = new FlightGraphicsSeat();
 
             flightSeat.setVersion(jsonObject.getString("version"));
             flightSeat.setListHeaderTitle(jsonObject.getString("listHeaderTitle"));
@@ -302,7 +303,7 @@ public class FlightSeat {
 
                     JSONObject rowObject = array.getJSONObject(i);
 
-                    Row row = new Row();
+                    FlightGraphicsRow row = new FlightGraphicsRow();
 
                     row.setRowId(rowObject.getInt("rowId"));
                     row.setSeatArrange(rowObject.getString("seatArrange"));

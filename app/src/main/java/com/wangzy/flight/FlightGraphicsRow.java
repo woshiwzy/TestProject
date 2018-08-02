@@ -6,7 +6,7 @@ import java.util.ArrayList;
 /**
  * 座位排描述
  */
-public class Row {
+public class FlightGraphicsRow {
 
 //    {
 //        "rowId": "2",
@@ -88,7 +88,7 @@ public class Row {
 
     @Override
     public String toString() {
-        return "Row{" +
+        return "FlightGraphicsRow{" +
                 "rowId='" + rowId + '\'' +
                 ", seatArrange='" + seatArrange + '\'' +
                 ", rangeTitle='" + rangeTitle + '\'' +
@@ -100,7 +100,7 @@ public class Row {
 
     public static class RowRange implements Cloneable {
 
-        private Row row;
+        private FlightGraphicsRow row;
 
         private int start;
         private int end;
@@ -123,11 +123,11 @@ public class Row {
             this.end = end;
         }
 
-        public Row getRow() {
+        public FlightGraphicsRow getRow() {
             return row;
         }
 
-        public void setRow(Row row) {
+        public void setRow(FlightGraphicsRow row) {
             this.row = row;
         }
 

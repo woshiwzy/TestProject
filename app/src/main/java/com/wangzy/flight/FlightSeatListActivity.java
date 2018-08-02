@@ -39,6 +39,7 @@ public class FlightSeatListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_seat_list);
         expandableListView = findViewById(R.id.expandListView);
+
         initListView();
     }
 
@@ -57,6 +58,8 @@ public class FlightSeatListActivity extends AppCompatActivity {
                 loadAdapterData();
             }
         });
+
+
         loadAdapterData();
     }
 
@@ -77,12 +80,12 @@ public class FlightSeatListActivity extends AppCompatActivity {
             configTemplate.add(jsonFileName);
         }
 
-        ArrayList<FlightTemplate> flightTemplates = loadData();
+        ArrayList<FlightGraphicsTemplate> flightTemplates = FlightGraphicsTemplateTool.getAllFlightTemplate(this);
 
         int totalFlihtNumber = 0;
         int successNumber = 0;
 
-        for (FlightTemplate flightTemplate : flightTemplates) {
+        for (FlightGraphicsTemplate flightTemplate : flightTemplates) {
 
             ArrayList<String> childs = flightTemplate.getChild();
             totalFlihtNumber += childs.size();
@@ -97,9 +100,9 @@ public class FlightSeatListActivity extends AppCompatActivity {
             }
         }
 
-        Collections.sort(flightTemplates, new Comparator<FlightTemplate>() {
+        Collections.sort(flightTemplates, new Comparator<FlightGraphicsTemplate>() {
             @Override
-            public int compare(FlightTemplate o1, FlightTemplate o2) {
+            public int compare(FlightGraphicsTemplate o1, FlightGraphicsTemplate o2) {
 
                 boolean onLine1 = o1.existConfig();
                 boolean onLine2 = o2.existConfig();
@@ -124,10 +127,14 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
                 String childFlight = (String) parent.getExpandableListAdapter().getChild(groupPosition, childPosition);
 
-                LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight);
+                FlightGraphicsSeat seat = FlightGraphicsTemplateTool.findFlightSetByFlightNumber(FlightSeatListActivity.this, childFlight);
+
+                LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight+" template:"+seat.getRangeTitle());
+
 
                 Intent i = new Intent();
-                FlightSeatActivity.flightTemplate = (FlightTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
+                FlightSeatActivity.flightTemplate = (FlightGraphicsTemplate) parent.getExpandableListAdapter().getGroup(groupPosition);
+
                 if (FlightSeatActivity.flightTemplate.existConfig()) {
                     Tool.startActivity(FlightSeatListActivity.this, FlightSeatActivity.class, i);
                 } else {
@@ -139,40 +146,6 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
     }
 
-
-    /**
-     * 加载映射文件
-     *
-     * @return
-     */
-    private ArrayList<FlightTemplate> loadData() {
-
-        String jsonContent = AssertTool.getAssertStringContent(this, "flightmap.json");
-
-        ArrayList<FlightTemplate> flightTemplates = new ArrayList<>();
-
-        try {
-
-            JSONArray jsonArray = new JSONArray(jsonContent);
-            for (int i = 0, isize = jsonArray.length(); i < isize; i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                String template = jsonObject.getString("template");
-                FlightTemplate flightTemplate = new FlightTemplate();
-                flightTemplate.setTemplate(template);
-                JSONArray childAray = jsonObject.getJSONArray("child");
-                for (int j = 0, jsize = childAray.length(); j < jsize; j++) {
-                    String child = childAray.getString(j);
-                    flightTemplate.addChild(child);
-                }
-                flightTemplates.add(flightTemplate);
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return flightTemplates;
-    }
 
 
     /**
@@ -240,9 +213,9 @@ public class FlightSeatListActivity extends AppCompatActivity {
         private Context context;
         private LayoutInflater layoutInflater;
 
-        private ArrayList<FlightTemplate> getGroupDatas = new ArrayList<>();
+        private ArrayList<FlightGraphicsTemplate> getGroupDatas = new ArrayList<>();
 
-        public MyExpandListAdapter(Context context, ArrayList<FlightTemplate> getGroupDatas) {
+        public MyExpandListAdapter(Context context, ArrayList<FlightGraphicsTemplate> getGroupDatas) {
             this.context = context;
             this.layoutInflater = LayoutInflater.from(context);
             this.getGroupDatas = getGroupDatas;
