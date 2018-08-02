@@ -2,14 +2,16 @@ package com.wangzy.flight;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.DataSetObserver;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ExpandableListAdapter;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.EditText;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
 
@@ -34,11 +36,46 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
     ExpandableListView expandableListView;
 
+    EditText editTextSearch;
+    MyExpandListAdapter myExpandListAdapter = null;
+    ArrayList<FlightGraphicsTemplate> flightTemplates = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flight_seat_list);
         expandableListView = findViewById(R.id.expandListView);
+        editTextSearch = findViewById(R.id.editTextSearch);
+
+        editTextSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String re = editTextSearch.getText().toString();
+                for (int i = 0, isize = flightTemplates.size(); i < isize; i++) {
+                    FlightGraphicsTemplate flightGraphicsTemplate = flightTemplates.get(i);
+                    ArrayList<String> childs = flightGraphicsTemplate.getChild();
+                    for (String str : childs) {
+                        if (str.equals(re)) {
+                            myExpandListAdapter.setSelect(i);
+                            expandableListView.setSelection(i);
+                            expandableListView.expandGroup(i);
+                            return;
+                        }
+                    }
+                }
+
+            }
+        });
 
         initListView();
     }
@@ -51,14 +88,6 @@ public class FlightSeatListActivity extends AppCompatActivity {
                 validate();
             }
         });
-
-        findViewById(R.id.buttonLoadTemplate).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                loadAdapterData();
-            }
-        });
-
 
         loadAdapterData();
     }
@@ -80,7 +109,7 @@ public class FlightSeatListActivity extends AppCompatActivity {
             configTemplate.add(jsonFileName);
         }
 
-        ArrayList<FlightGraphicsTemplate> flightTemplates = FlightGraphicsTemplateTool.getAllFlightTemplate(this);
+        flightTemplates = FlightGraphicsTemplateTool.getAllFlightTemplate(this);
 
         int totalFlihtNumber = 0;
         int successNumber = 0;
@@ -116,7 +145,7 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
         ((TextView) findViewById(R.id.textViewTitle)).setText("总飞机图布局：" + flightTemplates.size() + "个缺少" + (flightTemplates.size() - successNumber) + "个布局图,对应飞机号：" + totalFlihtNumber + "个");
 
-        MyExpandListAdapter myExpandListAdapter = new MyExpandListAdapter(this, flightTemplates);
+        myExpandListAdapter = new MyExpandListAdapter(this, flightTemplates);
 
         expandableListView.setAdapter(myExpandListAdapter);
         expandableListView.setGroupIndicator(null);
@@ -129,7 +158,7 @@ public class FlightSeatListActivity extends AppCompatActivity {
 
                 FlightGraphicsSeat seat = FlightGraphicsTemplateTool.findFlightSetByFlightNumber(FlightSeatListActivity.this, childFlight);
 
-                LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight+" template:"+seat.getRangeTitle());
+                LogUtil.i(ConstantKt.getTAG(), "child flight:" + childFlight + " template:" + seat.getRangeTitle());
 
 
                 Intent i = new Intent();
@@ -145,7 +174,6 @@ public class FlightSeatListActivity extends AppCompatActivity {
         });
 
     }
-
 
 
     /**
@@ -208,10 +236,11 @@ public class FlightSeatListActivity extends AppCompatActivity {
     }
 
 
-    class MyExpandListAdapter implements ExpandableListAdapter {
+    class MyExpandListAdapter extends BaseExpandableListAdapter {
 
         private Context context;
         private LayoutInflater layoutInflater;
+        private int select = -1;
 
         private ArrayList<FlightGraphicsTemplate> getGroupDatas = new ArrayList<>();
 
@@ -221,16 +250,6 @@ public class FlightSeatListActivity extends AppCompatActivity {
             this.getGroupDatas = getGroupDatas;
         }
 
-
-        @Override
-        public void registerDataSetObserver(DataSetObserver observer) {
-
-        }
-
-        @Override
-        public void unregisterDataSetObserver(DataSetObserver observer) {
-
-        }
 
         @Override
         public int getGroupCount() {
@@ -270,6 +289,13 @@ public class FlightSeatListActivity extends AppCompatActivity {
             return true;
         }
 
+        public void setSelect(int index) {
+
+            this.select = index;
+            this.notifyDataSetChanged();
+
+        }
+
         @Override
         public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
 
@@ -288,6 +314,12 @@ public class FlightSeatListActivity extends AppCompatActivity {
             }
 
             ((TextView) convertView.findViewById(R.id.textViewFlightNumberGroup)).setText("Template飞机号：" + getGroupDatas.get(groupPosition).getTemplate());
+
+            if (select == groupPosition) {
+                convertView.setBackgroundColor(Color.MAGENTA);
+            } else {
+                convertView.setBackgroundColor(Color.WHITE);
+            }
 
             return convertView;
         }
@@ -310,35 +342,5 @@ public class FlightSeatListActivity extends AppCompatActivity {
             return true;
         }
 
-        @Override
-        public boolean areAllItemsEnabled() {
-            return false;
-        }
-
-        @Override
-        public boolean isEmpty() {
-            return false;
-        }
-
-        @Override
-        public void onGroupExpanded(int groupPosition) {
-
-        }
-
-        @Override
-        public void onGroupCollapsed(int groupPosition) {
-
-        }
-
-        @Override
-        public long getCombinedChildId(long groupId, long childId) {
-
-            return 0;
-        }
-
-        @Override
-        public long getCombinedGroupId(long groupId) {
-            return 0;
-        }
     }
 }

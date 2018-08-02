@@ -68,6 +68,12 @@ public class FlightGraphicsTemplateTool {
             }
         }
 
+        if (null == targetTemplate) {
+
+            return null;
+        }
+
+
         FlightGraphicsSeat flightSeat = FlightGraphicsSeat.loadFlightSeat(context, "data/" + targetTemplate.getConfigFile() + ".json");
 
         return flightSeat;
