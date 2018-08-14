@@ -18,12 +18,12 @@ import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
 import com.wangzy.flight.FlightSeatListActivity
-import com.wangzy.work.WorkMainActivity
+import com.wangzy.work.activity.DragTextActivity
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "飞机图", "BB", "CC")
+    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "飞机图", "拖动TextView", "CC")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -79,7 +79,7 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                         gotoActivity(TimeLineActivity::class.java)
                     }
                     11 -> {
-                        gotoActivity(WorkMainActivity::class.java)
+                        gotoActivity(com.wangzy.work.activity.WorkMainActivity::class.java)
                     }
                     12 -> {
                         startTracetest()
@@ -95,6 +95,9 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                     15 -> {
 //                        gotoActivity(FlightSeatActivity::class.java)
                         gotoActivity(FlightSeatListActivity::class.java)
+                    }
+                    16 -> {
+                        gotoActivity(DragTextActivity::class.java)
                     }
 
                 }

@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "listHeaderTitle":"ABC__DEF",
+  "rangeTitle": "ABCDEF",
+  "rows": [
+    {
+      "rowId": 1,
+      "seatArrange": "1,1,1,A,A,1,1,1",
+      "rangeTitle": "A,B,C,_,_,D,E,F",
+      "seatArrangeNumber": "1-22"
+    }
+  ]
+}

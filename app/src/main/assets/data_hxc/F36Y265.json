@@ -1,0 +1,49 @@
+{
+  "version": "1.0",
+  "listHeaderTitle":"AC__DEFG__HK",
+  "rangeTitle": "ACDEFGHK",
+  "rows": [
+    {
+      "rowId": 1,
+      "seatArrange": "1,1,A,A,1,0,0,1,A,A,1,1",
+      "rangeTitle": "A,C,_,_,D,_,_,G,_,_,H,K",
+      "seatArrangeNumber": "1-6"
+    },
+    {
+      "rowId": 2,
+      "seatArrange": "1,1,A,A,1,1,1,1,A,A,1,1",
+      "rangeTitle":  "A,C,_,_,D,E,F,G,_,_,H,K",
+      "seatArrangeNumber": "7-23"
+    },
+    {
+      "rowId": 3,
+      "seatArrange": "1,1,A,A,0,0,0,0,A,A,1,1",
+      "rangeTitle":  "A,C,_,_,_,_,_,_,_,_,H,K",
+      "seatArrangeNumber": "24-24"
+    },
+    {
+      "rowId": 4,
+      "seatArrange": "1,1,A,A,1,1,1,1,A,A,1,1",
+      "rangeTitle": "A,C,_,_,D,E,F,G,_,_,H,K",
+      "seatArrangeNumber": "25-36"
+    },
+    {
+      "rowId": 5,
+      "seatArrange": "1,1,A,A,1,0,1,1,A,A,1,1",
+      "rangeTitle": "A,C,_,_,D,_,F,G,_,_,H,K",
+      "seatArrangeNumber": "37-39"
+    },
+    {
+      "rowId": 6,
+      "seatArrange": "1,1,A,A,1,0,1,1,A,A,0,0",
+      "rangeTitle": "A,C,_,_,D,_,F,G,_,_,_,_",
+      "seatArrangeNumber": "40-40"
+    },
+    {
+      "rowId": 7,
+      "seatArrange": "0,0,A,A,1,0,1,1,A,A,0,0",
+      "rangeTitle": "_,_,_,_,D,_,F,G,_,_,_,_",
+      "seatArrangeNumber": "41-41"
+    }
+  ]
+}

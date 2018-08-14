@@ -13,19 +13,13 @@
       "rowId": 2,
       "seatArrange": "1,1,1,A,A,1,1,1,A,A,1,1,1",
       "rangeTitle": "A,B,C,_,_,D,F,G,_,_,H,J,K",
-      "seatArrangeNumber": "20-38"
+      "seatArrangeNumber": "20-38,51-64"
     },
     {
       "rowId": 3,
-      "seatArrange": "1,1,1,A,A,1,1,1,A,A,1,1,1",
-      "rangeTitle": "A,B,C,_,_,D,F,G,_,_,H,J,K",
-      "seatArrangeNumber": "50-63"
-    },
-    {
-      "rowId": 4,
       "seatArrange": "0,0,0,A,A,1,1,1,A,A,0,0,0",
       "rangeTitle": "_,_,_,_,_,D,F,G,_,_,_,_,_",
-      "seatArrangeNumber": "64-65"
+      "seatArrangeNumber": "50-50,65-65"
     }
   ]
 }

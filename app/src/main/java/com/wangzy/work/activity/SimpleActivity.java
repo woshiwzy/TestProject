@@ -1,4 +1,4 @@
-package com.wangzy.work;
+package com.wangzy.work.activity;
 
 import android.app.Activity;
 import android.os.Bundle;

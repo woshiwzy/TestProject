@@ -1,0 +1,37 @@
+{
+  "version": "1.0",
+  "listHeaderTitle":"ABC__DEF",
+  "rangeTitle": "ABCDEF",
+  "rows": [
+    {
+      "rowId": 1,
+      "seatArrange": "1,0,1,A,A,1,0,1",
+      "rangeTitle": "A,_,C,_,_,D,_,F",
+      "seatArrangeNumber": "1-2"
+    },
+    {
+      "rowId": 2,
+      "seatArrange": "1,1,1,A,A,1,1,1",
+      "rangeTitle": "A,B,C,_,_,D,E,F",
+      "seatArrangeNumber": "3-7,22-34"
+    },
+    {
+      "rowId": 3,
+      "seatArrange": "0,1,1,A,A,0,0,0",
+      "rangeTitle": "_,B,C,_,_,_,_,_",
+      "seatArrangeNumber": "8-8"
+    },
+    {
+      "rowId": 4,
+      "seatArrange": "1,1,1,A,A,1,1,1",
+      "rangeTitle": "A,B,C,_,_,D,E,F",
+      "seatArrangeNumber": "9-20"
+    },
+    {
+      "rowId": 5,
+      "seatArrange": "0,1,1,A,A,1,1,0",
+      "rangeTitle": "_,B,C,_,_,D,E,_",
+      "seatArrangeNumber": "21-21"
+    }
+  ]
+}

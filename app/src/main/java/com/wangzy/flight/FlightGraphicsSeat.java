@@ -28,6 +28,9 @@ public class FlightGraphicsSeat {
 
     private ArrayList<FlightGraphicsRow> rows;//座位布局种类和分布
 
+
+
+
     /**
      * 座位图自检查
      *
@@ -278,6 +281,40 @@ public class FlightGraphicsSeat {
 
     public void setRangeTitle(String rangeTitle) {
         this.rangeTitle = rangeTitle;
+    }
+
+
+    public static FlightGraphicsSeat getlightSeatLayout(String json){
+
+
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            FlightGraphicsSeat flightSeat = new FlightGraphicsSeat();
+
+            flightSeat.setVersion(jsonObject.getString("version"));
+            flightSeat.setListHeaderTitle(jsonObject.getString("listHeaderTitle"));
+            flightSeat.setRangeTitle(jsonObject.getString("rangeTitle"));
+
+            JSONArray array = jsonObject.getJSONArray("rows");
+            if (null != array && array.length() > 0) {
+                for (int i = 0, isize = array.length(); i < isize; i++) {
+                    JSONObject rowObject = array.getJSONObject(i);
+                    FlightGraphicsRow row = new FlightGraphicsRow();
+
+                    row.setRowId(rowObject.getInt("rowId"));
+                    row.setSeatArrange(rowObject.getString("seatArrange"));
+                    row.setRangeTitle(rowObject.getString("rangeTitle"));
+                    row.setSeatArrangeNumber(rowObject.getString("seatArrangeNumber"));
+                    flightSeat.addRow(row);
+                }
+            }
+
+            return flightSeat;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
 

@@ -90,19 +90,19 @@
         <activity android:name=".activity.AnimateActivity" />
         <activity android:name=".activity.TimeLineActivity" />
         <activity
-            android:name="com.wangzy.work.WorkMainActivity"
+            android:name="com.wangzy.work.activity.WorkMainActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.wangzy.work.SimpleActivity"
+            android:name="com.wangzy.work.activity.SimpleActivity"
             android:label="@string/title_activity_simple" />
         <activity
-            android:name="com.wangzy.work.TrendViewActivity"
+            android:name="com.wangzy.work.activity.TrendViewActivity"
             android:label="@string/title_activity_trend_view" />
         <activity
-            android:name="com.wangzy.work.TrendViewMarkActivity"
+            android:name="com.wangzy.work.activity.TrendViewMarkActivity"
             android:label="@string/title_activity_trend_view_mark" />
         <activity
-            android:name="com.wangzy.work.PieViewActivity"
+            android:name="com.wangzy.work.activity.PieViewActivity"
             android:label="@string/title_activity_pie_view" />
 
         <!-- service -->
@@ -209,7 +209,8 @@
         </service>
 
         <activity android:name="com.wangzy.flight.FlightSeatActivity" />
-        <activity android:name="com.wangzy.flight.FlightSeatListActivity"/>
+        <activity android:name="com.wangzy.flight.FlightSeatListActivity" />
+        <activity android:name="com.wangzy.work.activity.DragTextActivity"></activity>
     </application>
 
 </manifest>

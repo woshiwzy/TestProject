@@ -1,5 +1,6 @@
 package com.wangzy.exitappdemo
 
+import com.wangzy.utils.AssertTool
 import org.junit.Test
 
 import org.junit.Assert.*
@@ -19,6 +20,7 @@ class ExampleUnitTest {
 
 
     fun testloadFlihtData(){
+
 
     }
 
