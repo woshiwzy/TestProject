@@ -9,6 +9,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import com.wangzy.activity.DragTextActivity
+import com.wangzy.activity.GreenDaoActivity
 import com.wangzy.exitappdemo.R
 import com.wangzy.exitappdemo.activity.*
 import com.wangzy.exitappdemo.consts.TAG
@@ -18,12 +20,28 @@ import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
 import com.wangzy.flight.FlightSeatListActivity
-import com.wangzy.work.activity.DragTextActivity
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
 
-    private val datas = arrayOf("Pull Refresh", "Event", "ViewStub", "Image", "GOTO MODEL", "ActivityLife", "LiveService", "BackService", "MVPACtivity", "Animate", "TimeLine", "WorkActivity", "Trace", "Rx", "Accessbility", "飞机图", "拖动TextView", "CC")
+    private val datas = arrayOf("Pull Refresh",
+            "Event",
+            "ViewStub",
+            "Image",
+            "GOTO MODEL",
+            "ActivityLife",
+            "LiveService",
+            "BackService",
+            "MVPACtivity",
+            "Animate",
+            "TimeLine",
+            "WorkActivity",
+            "Trace",
+            "Rx",
+            "Accessbility",
+            "飞机图",
+            "拖动TextView",
+            "GreenDao")
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TViewHolder {
@@ -79,7 +97,7 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                         gotoActivity(TimeLineActivity::class.java)
                     }
                     11 -> {
-                        gotoActivity(com.wangzy.work.activity.WorkMainActivity::class.java)
+                        gotoActivity(com.wangzy.activity.WorkMainActivity::class.java)
                     }
                     12 -> {
                         startTracetest()
@@ -99,6 +117,11 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                     16 -> {
                         gotoActivity(DragTextActivity::class.java)
                     }
+
+                    17 -> {
+                        gotoActivity(GreenDaoActivity::class.java)
+                    }
+
 
                 }
             }

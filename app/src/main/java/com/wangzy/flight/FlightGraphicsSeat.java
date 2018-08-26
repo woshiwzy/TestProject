@@ -29,7 +29,20 @@ public class FlightGraphicsSeat {
     private ArrayList<FlightGraphicsRow> rows;//座位布局种类和分布
 
 
+    public int getSeatCount() {
 
+        ArrayList<FlightGraphicsRow.RowRange> allrow = generateRealRow();
+
+        int count = 0;
+
+        for (FlightGraphicsRow.RowRange rowRange : allrow) {
+
+            String rangeTitle= rowRange.getRow().getRangeTitle().replace("_","").replace(",","");
+            char[] ary =rangeTitle.trim().toCharArray();
+            count += ary.length;
+        }
+        return count;
+    }
 
     /**
      * 座位图自检查
@@ -284,7 +297,7 @@ public class FlightGraphicsSeat {
     }
 
 
-    public static FlightGraphicsSeat getlightSeatLayout(String json){
+    public static FlightGraphicsSeat getlightSeatLayout(String json) {
 
 
         try {
@@ -316,8 +329,6 @@ public class FlightGraphicsSeat {
 
         return null;
     }
-
-
 
 
     @Deprecated

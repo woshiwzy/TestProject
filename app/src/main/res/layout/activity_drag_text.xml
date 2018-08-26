@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.wangzy.work.activity.DragTextActivity">
+    tools:context="com.wangzy.activity.DragTextActivity">
 
     <com.wangzy.work.view.MoveTextView
         android:id="@+id/MoveTextView"

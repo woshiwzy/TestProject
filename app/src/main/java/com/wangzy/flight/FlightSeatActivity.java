@@ -46,7 +46,9 @@ public class FlightSeatActivity extends Activity {
     private void buildAdapter() {
 
 
-        FlightGraphicsSeat flightSeat = FlightGraphicsTemplateTool.findFlightSetByFlightNumber(this,flightTemplate.getConfigFile());
+        FlightGraphicsSeat flightSeat = FlightGraphicsTemplateTool.findFlightSetByFlightNumber(this, flightTemplate.getConfigFile());
+
+        ((TextView) findViewById(R.id.textViewRowNumber)).setText(flightSeat.getSeatCount() + "个座位");
 
         setTitle(flightTemplate.getConfigFile());
         String validate = flightSeat.selfValidate();

@@ -55,12 +55,12 @@
         android:smallScreens="true" />
 
     <application
-        android:name=".App"
+        android:name="com.App"
         android:allowBackup="true"
-        android:icon="@drawable/star"
+        android:icon="@mipmap/timg"
         android:label="@string/app_name"
         android:persistent="true"
-        android:roundIcon="@drawable/star"
+        android:roundIcon="@mipmap/timg"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -90,19 +90,19 @@
         <activity android:name=".activity.AnimateActivity" />
         <activity android:name=".activity.TimeLineActivity" />
         <activity
-            android:name="com.wangzy.work.activity.WorkMainActivity"
+            android:name="com.wangzy.activity.WorkMainActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.wangzy.work.activity.SimpleActivity"
+            android:name="com.wangzy.activity.SimpleActivity"
             android:label="@string/title_activity_simple" />
         <activity
-            android:name="com.wangzy.work.activity.TrendViewActivity"
+            android:name="com.wangzy.activity.TrendViewActivity"
             android:label="@string/title_activity_trend_view" />
         <activity
-            android:name="com.wangzy.work.activity.TrendViewMarkActivity"
+            android:name="com.wangzy.activity.TrendViewMarkActivity"
             android:label="@string/title_activity_trend_view_mark" />
         <activity
-            android:name="com.wangzy.work.activity.PieViewActivity"
+            android:name="com.wangzy.activity.PieViewActivity"
             android:label="@string/title_activity_pie_view" />
 
         <!-- service -->
@@ -210,7 +210,8 @@
 
         <activity android:name="com.wangzy.flight.FlightSeatActivity" />
         <activity android:name="com.wangzy.flight.FlightSeatListActivity" />
-        <activity android:name="com.wangzy.work.activity.DragTextActivity"></activity>
+        <activity android:name="com.wangzy.activity.DragTextActivity" />
+        <activity android:name="com.wangzy.activity.GreenDaoActivity"></activity>
     </application>
 
 </manifest>

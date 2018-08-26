@@ -12,7 +12,6 @@ import android.os.IBinder
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import com.TestMix
 import com.wangzy.exitappdemo.R
 import com.wangzy.exitappdemo.adapter.RAdapter
 import com.wangzy.exitappdemo.consts.TAG
@@ -20,10 +19,6 @@ import com.wangzy.exitappdemo.receiver.HomeReceiver
 import com.wangzy.exitappdemo.service.MyJobService
 import com.wangzy.exitappdemo.service.ServiceWithToast
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.experimental.CommonPool
-import kotlinx.coroutines.experimental.android.UI
-import kotlinx.coroutines.experimental.delay
-import kotlinx.coroutines.experimental.launch
 
 
 class MainActivity : Activity() {
@@ -72,7 +67,6 @@ class MainActivity : Activity() {
 //                pullRefresh.stopRefresh()
 //            }
 //        }
-
 
 
         buttonStartJob.setOnClickListener {
