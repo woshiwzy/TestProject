@@ -2,11 +2,10 @@ package com.wangzy.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.wangzy.domain.User
 import com.App
+import com.wangzy.domain.User
 import com.wangzy.exitappdemo.R
 import com.wangzy.exitappdemo.util.LogUtil
-import com.wangzy.greendao.UserDao
 import kotlinx.android.synthetic.main.activity_green_dao.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 
@@ -23,14 +22,13 @@ class GreenDaoActivity : AppCompatActivity() {
                 var user = User()
                 user.name = "sand$x"
                 user.age = x
-                user.intro="my name is sand$x"
+                user.intro = "my name is sand$x"
 
                 //如果Id为空才能save 否则只能insert,id不为空的话，save没有效果
 
                 App.instance.mdaoSession.userDao.save(user)
 
                 LogUtil.e(com.wangzy.exitappdemo.consts.TAG, user.toString())
-
 
 
             }
@@ -61,6 +59,9 @@ class GreenDaoActivity : AppCompatActivity() {
                 true
             }
 
+
+            var students = App.instance.mdaoSession.studentDao.queryBuilder().list()
+            LogUtil.e(com.wangzy.exitappdemo.consts.TAG, "data size:" + students.size)
         }
     }
 

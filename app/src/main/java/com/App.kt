@@ -17,7 +17,6 @@ class App : Application() {
 
     fun setUpdatabase() {
 
-
         var helper = MySQLiteOpenHelper(this, "test.db",null)
 
         var db = helper.writableDb
@@ -36,6 +35,7 @@ class App : Application() {
         instance = this
 
         setUpdatabase()
+
 
         registerActivityLifecycleCallbacks(object : ActivityLifecycleCallbacks {
 
