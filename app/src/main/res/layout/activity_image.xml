@@ -9,10 +9,18 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="top|center_horizontal"
-        android:orientation="vertical"
+        android:orientation="vertical">
 
-        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/textViewScreenInfo"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:textColor="@android:color/holo_red_dark"
+            android:background="#bbfaaa"
+            android:text="Test"
+            android:layout_height="@dimen/input_item_height" />
 
         <ImageView
             android:id="@+id/imageView3"
@@ -22,10 +30,11 @@
             android:src="@drawable/d" />
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#bbffaa"
             android:src="@drawable/test"
-            android:visibility="visible"
-            android:layout_height="wrap_content" />
+            android:visibility="visible" />
     </LinearLayout>
 
 

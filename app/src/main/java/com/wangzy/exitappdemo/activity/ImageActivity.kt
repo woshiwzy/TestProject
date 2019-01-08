@@ -1,12 +1,13 @@
 package com.wangzy.exitappdemo.activity
 
 import android.app.Activity
-import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.util.Log
-import com.wangzy.exitappdemo.consts.TAG
 import android.util.DisplayMetrics
+import android.util.Log
 import com.wangzy.exitappdemo.R
+import com.wangzy.exitappdemo.consts.TAG
+import com.wangzy.exitappdemo.util.Tool
+import kotlinx.android.synthetic.main.activity_image.*
 
 
 class ImageActivity : Activity() {
@@ -18,18 +19,17 @@ class ImageActivity : Activity() {
         val dm = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(dm)
 
-        Log.i(TAG,"density:"+dm.density+" widthPix:"+" dpi:"+dm.densityDpi)
+        Log.i(TAG, "density:" + dm.density + " widthPix:" + " dpi:" + dm.densityDpi)
 
 //        pixelSize = scaledPixelSize as Int * dm.scaledDensity
+        var p = Tool.getDisplayMetrics(this)
+        Log.i(TAG, "density:" + dm.density + " widthPix:" + " dpi:" + dm.densityDpi)
+        textViewScreenInfo.text = "density:" + dm.density + " widthPix:" + " dpi:" + dm.densityDpi + " width:height" + p.x + " " + p.y
+
 //
 
-        var bm = BitmapFactory.decodeResource(resources, R.drawable.test)
+//        var bm = BitmapFactory.decodeResource(resources, R.drawable.test)
 
 
-        Log.i(TAG,"bytecount:"+bm.byteCount)
-//        Log.i(TAG,"allow byte:"+bm.allocationByteCount)
-        Log.i(TAG,"allow M:"+bm.byteCount/1024/1024)
-        Log.i(TAG,"width:"+bm.width+" height:"+bm.height)
-//        imageView2.setImageBitmap(bm)
     }
 }

@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.wangzy.activity.DragTextActivity
 import com.wangzy.activity.GreenDaoActivity
 import com.wangzy.exitappdemo.R
 import com.wangzy.exitappdemo.activity.*
@@ -20,6 +19,8 @@ import com.wangzy.exitappdemo.service.ServiceWithToast
 import com.wangzy.exitappdemo.util.LogUtil
 import com.wangzy.exitappdemo.widget.MyPullRefresh
 import com.wangzy.flight.FlightSeatListActivity
+import com.wangzy.myactivity.DragTextActivity
+import com.wangzy.myactivity.WorkMainActivity
 
 class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) : RecyclerView.Adapter<RAdapter.TViewHolder>() {
 
@@ -97,7 +98,7 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
                         gotoActivity(TimeLineActivity::class.java)
                     }
                     11 -> {
-                        gotoActivity(com.wangzy.activity.WorkMainActivity::class.java)
+                        gotoActivity(WorkMainActivity::class.java)
                     }
                     12 -> {
                         startTracetest()
