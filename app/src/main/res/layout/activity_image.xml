@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:gravity="top|center_horizontal"
         android:orientation="vertical"
+
         android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:background="#bbffaa"
             android:src="@drawable/d" />
 
         <ImageView
