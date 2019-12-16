@@ -4,6 +4,10 @@ buildscript {
     ext.kotlin_version = '1.2.40'
     ext.anko_version = '0.10.4'
     repositories {
+
+//        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+//        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+
         google()
         jcenter()
         mavenCentral() // add repository
@@ -20,6 +24,9 @@ buildscript {
 
 allprojects {
     repositories {
+//        maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+//        maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
+
         google()
         jcenter()
         maven { url "https://jitpack.io" }
