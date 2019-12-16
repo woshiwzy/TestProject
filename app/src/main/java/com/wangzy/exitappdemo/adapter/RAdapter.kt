@@ -29,7 +29,7 @@ class RAdapter(private val context: Context, val myPullRefresh: MyPullRefresh) :
     private val datas = arrayOf("Pull Refresh",
             "Event",
             "ViewStub",
-            "Image",
+            "DPI 测试/Image",
             "GOTO MODEL",
             "ActivityLife",
             "LiveService",
